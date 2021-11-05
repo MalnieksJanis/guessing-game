@@ -19,11 +19,11 @@ int main ()
   cout << "Uzmini ciparu no 1 līdz 100. Tev ir 10 mēģinājumi" << endl;
   cin >> userNumber;
  meginajumuskaits++;
-  while (!win && meginajumuskaits<9){
+  while (!win && meginajumuskaits<10){
    
     if (userNumber < randNumber){
       cout << "Pārāk mazs skaitlis. Mini vēlreiz." << endl;
-      
+  
       cin >> userNumber ;
       meginajumuskaits++;
     } else if (userNumber > randNumber){
@@ -31,16 +31,17 @@ int main ()
       cout << "Pārāk liels cipars. Mini vēlreiz" << endl;
       cin >> userNumber;
       meginajumuskaits++;
-    } else if (win && meginajumuskaits<9 ){
-      cout <<"Tavi 10 mēģinājumi ir beigušies!" << endl;
-      win=true;
-    }else {
+      
+    } else {
       cout << "Tu uzminēji!!!" << endl;
-      cout << "Tu uzminēji ar "  << meginajumuskaits << " reizēm" << endl;
+      cout << "Tu uzminēji ar "  <<meginajumuskaits << " reizēm" << endl;
       win = true;
     }
   }
-  
+  if(userNumber!=randNumber && meginajumuskaits==10) 
+    {
+        cout<< "Jus zaudejat, pareiza atbilde ir"<<endl; 
+		cout << randNumber <<endl;}
 system ("pause"); 
 return 0; 
 }
